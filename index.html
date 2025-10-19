@@ -98,27 +98,32 @@
         }
         
         .logo {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 28px;
             box-shadow: 0 6px 20px rgba(255, 107, 0, 0.5);
             animation: pulse 2s infinite;
             position: relative;
             z-index: 1;
             border: 2px solid white;
+            overflow: hidden;
+            background: white;
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 10px;
         }
         
         .logo-glow {
             position: absolute;
-            width: 85px;
-            height: 85px;
+            width: 135px;
+            height: 135px;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             border-radius: 50%;
             opacity: 0.3;
@@ -607,14 +612,13 @@
             }
             
             .logo {
-                width: 80px;
-                height: 80px;
-                font-size: 32px;
+                width: 140px;
+                height: 140px;
             }
             
             .logo-glow {
-                width: 95px;
-                height: 95px;
+                width: 155px;
+                height: 155px;
             }
             
             .col {
@@ -653,9 +657,8 @@
             }
             
             .logo {
-                width: 90px;
-                height: 90px;
-                font-size: 36px;
+                width: 160px;
+                height: 160px;
             }
         }
         
@@ -670,14 +673,13 @@
             }
             
             .logo {
-                width: 60px;
-                height: 60px;
-                font-size: 24px;
+                width: 100px;
+                height: 100px;
             }
             
             .logo-glow {
-                width: 75px;
-                height: 75px;
+                width: 115px;
+                height: 115px;
             }
             
             input, textarea, select {
@@ -708,7 +710,9 @@
         <div class="header">
             <div class="logo-container">
                 <div class="logo-glow"></div>
-                <div class="logo">TL</div>
+                <div class="logo">
+                    <img src="https://raw.githubusercontent.com/thetracklight/track1/d80e74c451a47808cac0668c1f61c899d5e4d6c9/TL3.png" alt="Track Light Logo">
+                </div>
             </div>
             <div>
                 <h1>Track Light - Winner Verification</h1>
@@ -1112,6 +1116,12 @@
                         keywords: 'track light, lottery, winner, verification',
                         creator: 'Track Light Winner Verification System'
                     });
+                    
+                    // Add Track Light watermark background
+                    doc.setFontSize(60);
+                    doc.setTextColor(240, 240, 240);
+                    doc.setFont(undefined, 'bold');
+                    doc.text('TRACK LIGHT', 105, 150, { align: 'center', angle: 45 });
                     
                     // Add header with logo
                     doc.setFillColor(255, 107, 0);
